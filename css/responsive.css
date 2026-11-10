@@ -1,0 +1,209 @@
+/* ==========================================================================
+   SkyPulse Weather Dashboard - Responsive Styles
+   Mobile-first adaptivity for desktops, tablets, and smartphones
+   ========================================================================== */
+
+/* Tablet Viewports (≤ 900px) */
+@media (max-width: 900px) {
+  .app-container {
+    padding: 1.75rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .search-form {
+    max-width: 100%;
+  }
+
+  /* Balanced 5-column layout on tablet screens */
+  .forecast-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .forecast-card {
+    padding: 0.9rem 0.4rem;
+  }
+
+  .forecast-day {
+    font-size: 0.85rem;
+  }
+
+  .forecast-date {
+    font-size: 0.7rem;
+  }
+
+  .forecast-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .forecast-temps {
+    font-size: 0.85rem;
+    gap: 0.25rem;
+  }
+
+  .forecast-condition-name {
+    font-size: 0.7rem;
+  }
+}
+
+/* Mobile Viewports (≤ 640px) */
+@media (max-width: 640px) {
+  .app-container {
+    padding: 1.25rem 0.75rem;
+    gap: 1.25rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .logo-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* Search bar alignment: ensure buttons match in height */
+  .search-form {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .search-input-wrapper {
+    flex: 1 1 100%;
+  }
+
+  .btn-search {
+    flex: 1;
+    height: 44px;
+    padding: 0 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-geo {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .card {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .city-name {
+    font-size: 1.5rem;
+  }
+
+  .weather-primary {
+    justify-content: space-around;
+  }
+
+  .current-temp {
+    font-size: 3.75rem;
+  }
+
+  .temp-unit {
+    font-size: 1.4rem;
+  }
+
+  .weather-icon-large {
+    width: 70px;
+    height: 70px;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .highlight-value {
+    font-size: 2rem;
+  }
+
+  /* 5-Day Forecast: Smooth horizontal swipe with right fade indicator */
+  .forecast-section {
+    position: relative;
+  }
+
+  .forecast-grid {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 0.75rem;
+    padding-right: 1.25rem;
+    scroll-snap-type: x mandatory;
+    gap: 0.75rem;
+    -webkit-overflow-scrolling: touch;
+    /* Subtle fade cue on the right edge signaling more content */
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 32px), transparent 100%);
+    mask-image: linear-gradient(to right, black calc(100% - 32px), transparent 100%);
+  }
+
+  .forecast-grid::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .forecast-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+  }
+
+  .forecast-card {
+    min-width: 120px;
+    max-width: 135px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    padding: 1rem 0.65rem;
+  }
+}
+
+/* Small Smartphone Viewports (≤ 480px, e.g., 375px iPhone) */
+@media (max-width: 480px) {
+  /* Prevent header collision between long city names and timezone badge */
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .badge {
+    align-self: flex-start;
+  }
+
+  .city-name {
+    font-size: 1.4rem;
+    word-break: break-word;
+  }
+
+  /* Weather Hero Layout centering */
+  .weather-primary {
+    justify-content: center;
+    gap: 1.75rem;
+  }
+
+  .current-temp {
+    font-size: 3.25rem;
+  }
+
+  /* Balanced chips for high, low, and feels-like */
+  .daily-minmax {
+    justify-content: center;
+  }
+
+  .minmax-item {
+    flex: 1 1 auto;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.5rem;
+  }
+}
